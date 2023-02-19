@@ -2,7 +2,7 @@ import React from 'react';
 
 const Letter = ({ letterPosition, attemptValue} ) => {
   return (
-    <div>
+    <div className='letter'> 
       
     </div>
   );

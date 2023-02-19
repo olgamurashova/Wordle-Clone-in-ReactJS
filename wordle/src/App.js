@@ -2,6 +2,7 @@
 import './App.css';
 import Board from './components/Board';
 import Keyboard from './components/Keyboard';
+import Letter from './components/Letter';
 
 
 
@@ -11,6 +12,7 @@ function App() {
 
     <Board />
     <Keyboard />
+    <Letter />
   </div>
  
 }
