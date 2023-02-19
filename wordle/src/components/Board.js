@@ -1,12 +1,9 @@
 import React from 'react';
-import { boardDefault } from '../Words';
-import { useState } from 'react';
+import { AppContext } from '../App';
 import Letter from './Letter';
 
 
 const Board = () => {
-    const [board, setBoard] = useState(boardDefault);
-
 
 
 
