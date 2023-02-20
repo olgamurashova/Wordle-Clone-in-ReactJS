@@ -51,7 +51,7 @@ function App() {
     <nav> <h1>Wordle</h1></nav>
 
     <AppContext.Provider value={ 
-      {board, setBoard, currAttempt, setCurrAttempt} 
+      {board, setBoard, currAttempt, setCurrAttempt, onDelete, onEnter, onSelectLetter} 
       }>
       <div className='game'>
 
