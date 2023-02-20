@@ -15,10 +15,14 @@ function App() {
 
   const [board, setBoard] = useState(boardDefault);
 
-  return <div className='App'>
-    <nav>Wordle</nav>
+  const [currentAttempt, setcurrentAttempt] = useState({attempt: 0, letterPosition: 0});
 
-    <AppContext.Provider value={ {board, setBoard } }>
+  return <div className='App'>
+    <nav> <h1>Wordle</h1></nav>
+
+    <AppContext.Provider value={ 
+      {board, setBoard, currentAttempt, setcurrentAttempt} 
+      }>
       <div className='game'>
 
     <Board />
