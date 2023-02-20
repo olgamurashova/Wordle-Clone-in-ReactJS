@@ -9,6 +9,7 @@ const Board = () => {
 
   return (
     <div className='board'>
+      {""}
         <div className='row'>
           <Letter letterPosition={0} attemptValue={0} />
           <Letter letterPosition={1} attemptValue={0} />

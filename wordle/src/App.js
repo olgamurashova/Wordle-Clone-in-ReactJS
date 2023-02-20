@@ -2,7 +2,7 @@
 import './App.css';
 import Board from './components/Board';
 import Keyboard from './components/Keyboard';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { boardDefault } from './Words';
 
 import { createContext } from 'react';
@@ -15,18 +15,18 @@ function App() {
 
   const [board, setBoard] = useState(boardDefault);
 
-  const [currentAttempt, setcurrentAttempt] = useState({attempt: 0, letterPosition: 0});
+  const [currAttempt, setCurrAttempt] = useState({attempt: 0, letterPos: 0});
 
   return <div className='App'>
     <nav> <h1>Wordle</h1></nav>
 
     <AppContext.Provider value={ 
-      {board, setBoard, currentAttempt, setcurrentAttempt} 
+      {board, setBoard, currAttempt, setCurrAttempt} 
       }>
       <div className='game'>
 
-    <Board />
-    <Keyboard />
+          <Board />
+          <Keyboard />
     
     </div>
   
