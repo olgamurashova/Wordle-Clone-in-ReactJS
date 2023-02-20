@@ -19,9 +19,12 @@ function App() {
     <nav>Wordle</nav>
 
     <AppContext.Provider value={ {board, setBoard } }>
+      <div className='game'>
 
     <Board />
     <Keyboard />
+    
+    </div>
   
 
     </AppContext.Provider>
