@@ -91,7 +91,7 @@ nav h1{
   flex: 33%;
   display: flex;
   flex-direction: row;
-  display: flex;
+
   justify-content: center;
   margin: 5px;
 
@@ -102,12 +102,12 @@ nav h1{
   flex: 33%;
   display: flex;
   flex-direction: row;
-  display: flex;
+
   justify-content: center;
   margin: 5px;
 }
 
-line3 {
+.line3 {
   flex: 33%;
   display: flex;
   flex-direction: row;
