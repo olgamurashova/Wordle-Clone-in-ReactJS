@@ -18,21 +18,21 @@ const Keyboard = () => {
 
     } else {
       keys1.forEach((key) => {
-        if (event.key === key) {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
           onSelectLetter(key);
         }
         
       });
 
       keys2.forEach((key) => {
-        if (event.key === key) {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
           onSelectLetter(key);
         }
         
       });
 
       keys3.forEach((key) => {
-        if (event.key === key) {
+        if (event.key.toLowerCase() === key.toLowerCase()) {
           onSelectLetter(key);
         }
         
@@ -47,10 +47,10 @@ const Keyboard = () => {
     document.addEventListener("keydown", handleKeyboard)
 
     return () => {
-      remove.addEventListener("keydown", handleKeyboard)
+      document.removeEventListener("keydown", handleKeyboard)
 
     };
-  }
+  },
   [handleKeyboard]);
 
 
