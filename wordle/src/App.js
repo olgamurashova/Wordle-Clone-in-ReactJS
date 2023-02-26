@@ -22,13 +22,16 @@ function App() {
 
   const [disabledLetters, setDisabledLetter] = useState([]);
 
-  const [gameOver, setgameOver] = useState({gameOver: false, guessedWord: false})
+  const [gameOver, setgameOver] = useState({gameOver: false, guessedWord: false});
+
+  const [correctWord, setcorrectWord] = useState("");
   
-  const correctWord = "RIGHT";
+  
 
   useEffect(() => {
     generateWordSet().then((words) => {
-      setwordSet(words.wordSet)
+      setwordSet(words.wordSet);
+      setcorrectWord(words.todaysWord);
 
     })
 
