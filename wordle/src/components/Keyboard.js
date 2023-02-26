@@ -7,7 +7,7 @@ const Keyboard = () => {
   const keys2 = ["A","S","D","F","G","H","J","K","L"];
   const keys3 = ["Z","X","C","V","B","N","M"];
 
-  const { onDelete, onEnter, onSelectLetter } = useContext(AppContext);
+  const { onDelete, onEnter, onSelectLetter, disabledLetter } = useContext(AppContext);
 
   const handleKeyboard = useCallback((event) => {
     if (event.key === "Enter") {
@@ -63,7 +63,7 @@ const Keyboard = () => {
     <div className='keyboard' onKeyDown={handleKeyboard}>
       <div className='line1'>
         {keys1.map((key) => {
-          return <Key keyVal={key} />;
+          return <Key keyVal={key} disabled={disabledLetter.includes(key)} />;
         })}
 
       </div>
@@ -71,7 +71,7 @@ const Keyboard = () => {
       <div className='line2'>
 
       {keys2.map((key) => {
-          return  <Key keyVal={key}/>;
+          return  <Key keyVal={key} disabled={disabledLetter.includes(key)} />;
         })}
 
       </div>
@@ -81,7 +81,7 @@ const Keyboard = () => {
 
 
         {keys3.map((key) => {
-          return  <Key keyVal={key}/>;
+          return  <Key keyVal={key} disabled={disabledLetter.includes(key)} />;
         })}
 
       <Key keyVal={"DELETE"} bigKey/>

@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect} from 'react';
 import { AppContext } from '../App';
 
 const Letter = ({ letterPosition, attemptValue} ) => {
@@ -14,7 +14,7 @@ const Letter = ({ letterPosition, attemptValue} ) => {
 
     useEffect(() => {
       if(letter !== "" && !correct && !almost) {
-        setDisabledLetter([...disabledLetters, letter])
+        setDisabledLetter((prev) => [...prev, letter])
 
       }
 
