@@ -17,7 +17,9 @@ function App() {
 
   const [currAttempt, setCurrAttempt] = useState({attempt: 0, letterPos: 0});
 
-  const [wordSet, setwordSet] = useState(new Set())
+  const [wordSet, setwordSet] = useState(new Set());
+
+  const [disabledLetters, setDisabledLetter] = useState([]);
   
   const correctWord = "RIGHT";
 
@@ -67,7 +69,7 @@ function App() {
     }
 
     if (currWord === correctWord) {
-      alert("Game is Over");
+      alert("Game Ended");
     }
 
 
@@ -82,7 +84,7 @@ function App() {
     <nav> <h1>Wordle</h1></nav>
 
     <AppContext.Provider value={ 
-      {board, setBoard, currAttempt, setCurrAttempt, onDelete, onEnter, onSelectLetter, correctWord} 
+      {board, setBoard, currAttempt, setCurrAttempt, onDelete, onEnter, onSelectLetter, correctWord, disabledLetters, setDisabledLetter} 
       }>
       <div className='game'>
 

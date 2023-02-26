@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { AppContext } from '../App';
 
-const Key = ({keyVal, bigKey}) => {
+const Key = ({keyVal, bigKey, disabled}) => {
     const { board, setBoard, currAttempt, setCurrAttempt, onEnter, onDelete, onSelectLetter } = useContext(AppContext);
 
 
