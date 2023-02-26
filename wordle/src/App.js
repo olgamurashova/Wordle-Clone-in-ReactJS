@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { boardDefault, generateWordSet  } from './Words';
 
 import { createContext } from 'react';
+import GameOver from './components/GameOver';
 
 
 
@@ -20,6 +21,8 @@ function App() {
   const [wordSet, setwordSet] = useState(new Set());
 
   const [disabledLetters, setDisabledLetter] = useState([]);
+
+  const [gameOver, setgameOver] = useState({gameOver: false, guessedWord: false})
   
   const correctWord = "RIGHT";
 
@@ -69,7 +72,11 @@ function App() {
     }
 
     if (currWord === correctWord) {
-      alert("Game Ended");
+      setgameOver({gameOver: true, guessedWord: true})
+      return;
+    }
+    if (currAttempt.attempt === 5){
+      setgameOver({gameOver: true, guessedWord: false})
     }
 
 
@@ -84,12 +91,23 @@ function App() {
     <nav> <h1>Wordle</h1></nav>
 
     <AppContext.Provider value={ 
-      {board, setBoard, currAttempt, setCurrAttempt, onDelete, onEnter, onSelectLetter, correctWord, disabledLetters, setDisabledLetter} 
+      {board, 
+      setBoard, 
+      currAttempt, 
+      setCurrAttempt, 
+      onDelete, 
+      onEnter, 
+      onSelectLetter, 
+      correctWord, 
+      disabledLetters, 
+      setDisabledLetter, 
+      gameOver, 
+      setgameOver} 
       }>
       <div className='game'>
 
           <Board />
-          <Keyboard />
+          {gameOver.gameOver ? <GameOver /> : <Keyboard />}
     
     </div>
   
