@@ -1,15 +1,15 @@
 import React, { useContext, useEffect} from 'react';
 import { AppContext } from '../App';
 
-const Letter = ({ letterPosition, attemptValue} ) => {
+const Letter = ({ letterPos, attemptVal} ) => {
     const { board, correctWord, currAttempt, setDisabledLetters } = useContext(AppContext);
 
-    const letter = board[letterPosition][attemptValue];
+    const letter = board[letterPos][attemptVal];
 
-    const correct = correctWord.toUpperCase()[letterPosition] === letter;
+    const correct = correctWord.toUpperCase()[letterPos] === letter;
     const almost = !correct && letter !=="" && correctWord.includes(letter);
 
-    const letterState = currAttempt.attempt > attemptValue && 
+    const letterState = currAttempt.attempt > attemptVal && 
     (correct ? "correct" : almost ? "almost" : "error");
 
     useEffect(() => {

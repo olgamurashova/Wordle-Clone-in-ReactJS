@@ -20,7 +20,7 @@ function App() {
 
   const [wordSet, setwordSet] = useState(new Set());
 
-  const [disabledLetters, setDisabledLetter] = useState([]);
+  const [disabledLetters, setDisabledLetters] = useState([]);
 
   const [gameOver, setgameOver] = useState({gameOver: false, guessedWord: false});
 
@@ -103,7 +103,7 @@ function App() {
       onSelectLetter, 
       correctWord, 
       disabledLetters, 
-      setDisabledLetter, 
+      setDisabledLetters, 
       gameOver, 
       setgameOver} 
       }>
